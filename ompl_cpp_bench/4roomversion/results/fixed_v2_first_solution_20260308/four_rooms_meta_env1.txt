@@ -1,0 +1,5 @@
+env_seed=1
+obstacle_seed_used=1000000
+resample_attempt_used=0
+keepoutR=0.55
+z_wp=-0.3
