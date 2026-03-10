@@ -1,0 +1,1948 @@
+{
+  "source_results_dir": "/home/ruifeng/robMPCompare/ompl_cpp_bench/4roomversion/results/fixed_v2_first_solution_20260308",
+  "planners": [
+    "BITstar",
+    "PRMstar",
+    "RRTConnect",
+    "RRTstar"
+  ],
+  "envs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "boxes": {
+    "0": "four_rooms_boxes_env0.csv",
+    "1": "four_rooms_boxes_env1.csv",
+    "2": "four_rooms_boxes_env2.csv",
+    "3": "four_rooms_boxes_env3.csv",
+    "4": "four_rooms_boxes_env4.csv"
+  },
+  "runs": {
+    "0": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "1": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "2": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "3": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "4": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "paths": {
+    "0": {
+      "0": {
+        "BITstar": {
+          "seed": "12345",
+          "file": "path_BITstar_env0_run0_seed12345.csv"
+        },
+        "PRMstar": {
+          "seed": "12345",
+          "file": "path_PRMstar_env0_run0_seed12345.csv"
+        },
+        "RRTConnect": {
+          "seed": "12345",
+          "file": "path_RRTConnect_env0_run0_seed12345.csv"
+        },
+        "RRTstar": {
+          "seed": "12345",
+          "file": "path_RRTstar_env0_run0_seed12345.csv"
+        }
+      },
+      "10": {
+        "BITstar": {
+          "seed": "22345",
+          "file": "path_BITstar_env0_run10_seed22345.csv"
+        },
+        "PRMstar": {
+          "seed": "22345",
+          "file": "path_PRMstar_env0_run10_seed22345.csv"
+        },
+        "RRTConnect": {
+          "seed": "22345",
+          "file": "path_RRTConnect_env0_run10_seed22345.csv"
+        },
+        "RRTstar": {
+          "seed": "22345",
+          "file": "path_RRTstar_env0_run10_seed22345.csv"
+        }
+      },
+      "11": {
+        "BITstar": {
+          "seed": "23345",
+          "file": "path_BITstar_env0_run11_seed23345.csv"
+        },
+        "PRMstar": {
+          "seed": "23345",
+          "file": "path_PRMstar_env0_run11_seed23345.csv"
+        },
+        "RRTConnect": {
+          "seed": "23345",
+          "file": "path_RRTConnect_env0_run11_seed23345.csv"
+        },
+        "RRTstar": {
+          "seed": "23345",
+          "file": "path_RRTstar_env0_run11_seed23345.csv"
+        }
+      },
+      "12": {
+        "BITstar": {
+          "seed": "24345",
+          "file": "path_BITstar_env0_run12_seed24345.csv"
+        },
+        "PRMstar": {
+          "seed": "24345",
+          "file": "path_PRMstar_env0_run12_seed24345.csv"
+        },
+        "RRTConnect": {
+          "seed": "24345",
+          "file": "path_RRTConnect_env0_run12_seed24345.csv"
+        },
+        "RRTstar": {
+          "seed": "24345",
+          "file": "path_RRTstar_env0_run12_seed24345.csv"
+        }
+      },
+      "13": {
+        "BITstar": {
+          "seed": "25345",
+          "file": "path_BITstar_env0_run13_seed25345.csv"
+        },
+        "PRMstar": {
+          "seed": "25345",
+          "file": "path_PRMstar_env0_run13_seed25345.csv"
+        },
+        "RRTConnect": {
+          "seed": "25345",
+          "file": "path_RRTConnect_env0_run13_seed25345.csv"
+        },
+        "RRTstar": {
+          "seed": "25345",
+          "file": "path_RRTstar_env0_run13_seed25345.csv"
+        }
+      },
+      "14": {
+        "BITstar": {
+          "seed": "26345",
+          "file": "path_BITstar_env0_run14_seed26345.csv"
+        },
+        "PRMstar": {
+          "seed": "26345",
+          "file": "path_PRMstar_env0_run14_seed26345.csv"
+        },
+        "RRTConnect": {
+          "seed": "26345",
+          "file": "path_RRTConnect_env0_run14_seed26345.csv"
+        },
+        "RRTstar": {
+          "seed": "26345",
+          "file": "path_RRTstar_env0_run14_seed26345.csv"
+        }
+      },
+      "15": {
+        "BITstar": {
+          "seed": "27345",
+          "file": "path_BITstar_env0_run15_seed27345.csv"
+        },
+        "PRMstar": {
+          "seed": "27345",
+          "file": "path_PRMstar_env0_run15_seed27345.csv"
+        },
+        "RRTConnect": {
+          "seed": "27345",
+          "file": "path_RRTConnect_env0_run15_seed27345.csv"
+        },
+        "RRTstar": {
+          "seed": "27345",
+          "file": "path_RRTstar_env0_run15_seed27345.csv"
+        }
+      },
+      "16": {
+        "BITstar": {
+          "seed": "28345",
+          "file": "path_BITstar_env0_run16_seed28345.csv"
+        },
+        "PRMstar": {
+          "seed": "28345",
+          "file": "path_PRMstar_env0_run16_seed28345.csv"
+        },
+        "RRTConnect": {
+          "seed": "28345",
+          "file": "path_RRTConnect_env0_run16_seed28345.csv"
+        },
+        "RRTstar": {
+          "seed": "28345",
+          "file": "path_RRTstar_env0_run16_seed28345.csv"
+        }
+      },
+      "17": {
+        "BITstar": {
+          "seed": "29345",
+          "file": "path_BITstar_env0_run17_seed29345.csv"
+        },
+        "PRMstar": {
+          "seed": "29345",
+          "file": "path_PRMstar_env0_run17_seed29345.csv"
+        },
+        "RRTConnect": {
+          "seed": "29345",
+          "file": "path_RRTConnect_env0_run17_seed29345.csv"
+        },
+        "RRTstar": {
+          "seed": "29345",
+          "file": "path_RRTstar_env0_run17_seed29345.csv"
+        }
+      },
+      "18": {
+        "BITstar": {
+          "seed": "30345",
+          "file": "path_BITstar_env0_run18_seed30345.csv"
+        },
+        "PRMstar": {
+          "seed": "30345",
+          "file": "path_PRMstar_env0_run18_seed30345.csv"
+        },
+        "RRTConnect": {
+          "seed": "30345",
+          "file": "path_RRTConnect_env0_run18_seed30345.csv"
+        },
+        "RRTstar": {
+          "seed": "30345",
+          "file": "path_RRTstar_env0_run18_seed30345.csv"
+        }
+      },
+      "19": {
+        "BITstar": {
+          "seed": "31345",
+          "file": "path_BITstar_env0_run19_seed31345.csv"
+        },
+        "PRMstar": {
+          "seed": "31345",
+          "file": "path_PRMstar_env0_run19_seed31345.csv"
+        },
+        "RRTConnect": {
+          "seed": "31345",
+          "file": "path_RRTConnect_env0_run19_seed31345.csv"
+        },
+        "RRTstar": {
+          "seed": "31345",
+          "file": "path_RRTstar_env0_run19_seed31345.csv"
+        }
+      },
+      "1": {
+        "BITstar": {
+          "seed": "13345",
+          "file": "path_BITstar_env0_run1_seed13345.csv"
+        },
+        "PRMstar": {
+          "seed": "13345",
+          "file": "path_PRMstar_env0_run1_seed13345.csv"
+        },
+        "RRTConnect": {
+          "seed": "13345",
+          "file": "path_RRTConnect_env0_run1_seed13345.csv"
+        },
+        "RRTstar": {
+          "seed": "13345",
+          "file": "path_RRTstar_env0_run1_seed13345.csv"
+        }
+      },
+      "2": {
+        "BITstar": {
+          "seed": "14345",
+          "file": "path_BITstar_env0_run2_seed14345.csv"
+        },
+        "PRMstar": {
+          "seed": "14345",
+          "file": "path_PRMstar_env0_run2_seed14345.csv"
+        },
+        "RRTConnect": {
+          "seed": "14345",
+          "file": "path_RRTConnect_env0_run2_seed14345.csv"
+        },
+        "RRTstar": {
+          "seed": "14345",
+          "file": "path_RRTstar_env0_run2_seed14345.csv"
+        }
+      },
+      "3": {
+        "BITstar": {
+          "seed": "15345",
+          "file": "path_BITstar_env0_run3_seed15345.csv"
+        },
+        "PRMstar": {
+          "seed": "15345",
+          "file": "path_PRMstar_env0_run3_seed15345.csv"
+        },
+        "RRTConnect": {
+          "seed": "15345",
+          "file": "path_RRTConnect_env0_run3_seed15345.csv"
+        },
+        "RRTstar": {
+          "seed": "15345",
+          "file": "path_RRTstar_env0_run3_seed15345.csv"
+        }
+      },
+      "4": {
+        "BITstar": {
+          "seed": "16345",
+          "file": "path_BITstar_env0_run4_seed16345.csv"
+        },
+        "PRMstar": {
+          "seed": "16345",
+          "file": "path_PRMstar_env0_run4_seed16345.csv"
+        },
+        "RRTConnect": {
+          "seed": "16345",
+          "file": "path_RRTConnect_env0_run4_seed16345.csv"
+        },
+        "RRTstar": {
+          "seed": "16345",
+          "file": "path_RRTstar_env0_run4_seed16345.csv"
+        }
+      },
+      "5": {
+        "BITstar": {
+          "seed": "17345",
+          "file": "path_BITstar_env0_run5_seed17345.csv"
+        },
+        "PRMstar": {
+          "seed": "17345",
+          "file": "path_PRMstar_env0_run5_seed17345.csv"
+        },
+        "RRTConnect": {
+          "seed": "17345",
+          "file": "path_RRTConnect_env0_run5_seed17345.csv"
+        },
+        "RRTstar": {
+          "seed": "17345",
+          "file": "path_RRTstar_env0_run5_seed17345.csv"
+        }
+      },
+      "6": {
+        "BITstar": {
+          "seed": "18345",
+          "file": "path_BITstar_env0_run6_seed18345.csv"
+        },
+        "PRMstar": {
+          "seed": "18345",
+          "file": "path_PRMstar_env0_run6_seed18345.csv"
+        },
+        "RRTConnect": {
+          "seed": "18345",
+          "file": "path_RRTConnect_env0_run6_seed18345.csv"
+        },
+        "RRTstar": {
+          "seed": "18345",
+          "file": "path_RRTstar_env0_run6_seed18345.csv"
+        }
+      },
+      "7": {
+        "BITstar": {
+          "seed": "19345",
+          "file": "path_BITstar_env0_run7_seed19345.csv"
+        },
+        "PRMstar": {
+          "seed": "19345",
+          "file": "path_PRMstar_env0_run7_seed19345.csv"
+        },
+        "RRTConnect": {
+          "seed": "19345",
+          "file": "path_RRTConnect_env0_run7_seed19345.csv"
+        },
+        "RRTstar": {
+          "seed": "19345",
+          "file": "path_RRTstar_env0_run7_seed19345.csv"
+        }
+      },
+      "8": {
+        "BITstar": {
+          "seed": "20345",
+          "file": "path_BITstar_env0_run8_seed20345.csv"
+        },
+        "PRMstar": {
+          "seed": "20345",
+          "file": "path_PRMstar_env0_run8_seed20345.csv"
+        },
+        "RRTConnect": {
+          "seed": "20345",
+          "file": "path_RRTConnect_env0_run8_seed20345.csv"
+        },
+        "RRTstar": {
+          "seed": "20345",
+          "file": "path_RRTstar_env0_run8_seed20345.csv"
+        }
+      },
+      "9": {
+        "BITstar": {
+          "seed": "21345",
+          "file": "path_BITstar_env0_run9_seed21345.csv"
+        },
+        "PRMstar": {
+          "seed": "21345",
+          "file": "path_PRMstar_env0_run9_seed21345.csv"
+        },
+        "RRTConnect": {
+          "seed": "21345",
+          "file": "path_RRTConnect_env0_run9_seed21345.csv"
+        },
+        "RRTstar": {
+          "seed": "21345",
+          "file": "path_RRTstar_env0_run9_seed21345.csv"
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "BITstar": {
+          "seed": "112345",
+          "file": "path_BITstar_env1_run0_seed112345.csv"
+        },
+        "PRMstar": {
+          "seed": "112345",
+          "file": "path_PRMstar_env1_run0_seed112345.csv"
+        },
+        "RRTConnect": {
+          "seed": "112345",
+          "file": "path_RRTConnect_env1_run0_seed112345.csv"
+        },
+        "RRTstar": {
+          "seed": "112345",
+          "file": "path_RRTstar_env1_run0_seed112345.csv"
+        }
+      },
+      "10": {
+        "BITstar": {
+          "seed": "122345",
+          "file": "path_BITstar_env1_run10_seed122345.csv"
+        },
+        "PRMstar": {
+          "seed": "122345",
+          "file": "path_PRMstar_env1_run10_seed122345.csv"
+        },
+        "RRTConnect": {
+          "seed": "122345",
+          "file": "path_RRTConnect_env1_run10_seed122345.csv"
+        },
+        "RRTstar": {
+          "seed": "122345",
+          "file": "path_RRTstar_env1_run10_seed122345.csv"
+        }
+      },
+      "11": {
+        "BITstar": {
+          "seed": "123345",
+          "file": "path_BITstar_env1_run11_seed123345.csv"
+        },
+        "PRMstar": {
+          "seed": "123345",
+          "file": "path_PRMstar_env1_run11_seed123345.csv"
+        },
+        "RRTConnect": {
+          "seed": "123345",
+          "file": "path_RRTConnect_env1_run11_seed123345.csv"
+        },
+        "RRTstar": {
+          "seed": "123345",
+          "file": "path_RRTstar_env1_run11_seed123345.csv"
+        }
+      },
+      "12": {
+        "BITstar": {
+          "seed": "124345",
+          "file": "path_BITstar_env1_run12_seed124345.csv"
+        },
+        "PRMstar": {
+          "seed": "124345",
+          "file": "path_PRMstar_env1_run12_seed124345.csv"
+        },
+        "RRTConnect": {
+          "seed": "124345",
+          "file": "path_RRTConnect_env1_run12_seed124345.csv"
+        },
+        "RRTstar": {
+          "seed": "124345",
+          "file": "path_RRTstar_env1_run12_seed124345.csv"
+        }
+      },
+      "13": {
+        "BITstar": {
+          "seed": "125345",
+          "file": "path_BITstar_env1_run13_seed125345.csv"
+        },
+        "PRMstar": {
+          "seed": "125345",
+          "file": "path_PRMstar_env1_run13_seed125345.csv"
+        },
+        "RRTConnect": {
+          "seed": "125345",
+          "file": "path_RRTConnect_env1_run13_seed125345.csv"
+        },
+        "RRTstar": {
+          "seed": "125345",
+          "file": "path_RRTstar_env1_run13_seed125345.csv"
+        }
+      },
+      "14": {
+        "BITstar": {
+          "seed": "126345",
+          "file": "path_BITstar_env1_run14_seed126345.csv"
+        },
+        "PRMstar": {
+          "seed": "126345",
+          "file": "path_PRMstar_env1_run14_seed126345.csv"
+        },
+        "RRTConnect": {
+          "seed": "126345",
+          "file": "path_RRTConnect_env1_run14_seed126345.csv"
+        },
+        "RRTstar": {
+          "seed": "126345",
+          "file": "path_RRTstar_env1_run14_seed126345.csv"
+        }
+      },
+      "15": {
+        "BITstar": {
+          "seed": "127345",
+          "file": "path_BITstar_env1_run15_seed127345.csv"
+        },
+        "PRMstar": {
+          "seed": "127345",
+          "file": "path_PRMstar_env1_run15_seed127345.csv"
+        },
+        "RRTConnect": {
+          "seed": "127345",
+          "file": "path_RRTConnect_env1_run15_seed127345.csv"
+        },
+        "RRTstar": {
+          "seed": "127345",
+          "file": "path_RRTstar_env1_run15_seed127345.csv"
+        }
+      },
+      "16": {
+        "BITstar": {
+          "seed": "128345",
+          "file": "path_BITstar_env1_run16_seed128345.csv"
+        },
+        "PRMstar": {
+          "seed": "128345",
+          "file": "path_PRMstar_env1_run16_seed128345.csv"
+        },
+        "RRTConnect": {
+          "seed": "128345",
+          "file": "path_RRTConnect_env1_run16_seed128345.csv"
+        },
+        "RRTstar": {
+          "seed": "128345",
+          "file": "path_RRTstar_env1_run16_seed128345.csv"
+        }
+      },
+      "17": {
+        "BITstar": {
+          "seed": "129345",
+          "file": "path_BITstar_env1_run17_seed129345.csv"
+        },
+        "PRMstar": {
+          "seed": "129345",
+          "file": "path_PRMstar_env1_run17_seed129345.csv"
+        },
+        "RRTConnect": {
+          "seed": "129345",
+          "file": "path_RRTConnect_env1_run17_seed129345.csv"
+        },
+        "RRTstar": {
+          "seed": "129345",
+          "file": "path_RRTstar_env1_run17_seed129345.csv"
+        }
+      },
+      "18": {
+        "BITstar": {
+          "seed": "130345",
+          "file": "path_BITstar_env1_run18_seed130345.csv"
+        },
+        "PRMstar": {
+          "seed": "130345",
+          "file": "path_PRMstar_env1_run18_seed130345.csv"
+        },
+        "RRTConnect": {
+          "seed": "130345",
+          "file": "path_RRTConnect_env1_run18_seed130345.csv"
+        },
+        "RRTstar": {
+          "seed": "130345",
+          "file": "path_RRTstar_env1_run18_seed130345.csv"
+        }
+      },
+      "19": {
+        "BITstar": {
+          "seed": "131345",
+          "file": "path_BITstar_env1_run19_seed131345.csv"
+        },
+        "PRMstar": {
+          "seed": "131345",
+          "file": "path_PRMstar_env1_run19_seed131345.csv"
+        },
+        "RRTConnect": {
+          "seed": "131345",
+          "file": "path_RRTConnect_env1_run19_seed131345.csv"
+        },
+        "RRTstar": {
+          "seed": "131345",
+          "file": "path_RRTstar_env1_run19_seed131345.csv"
+        }
+      },
+      "1": {
+        "BITstar": {
+          "seed": "113345",
+          "file": "path_BITstar_env1_run1_seed113345.csv"
+        },
+        "PRMstar": {
+          "seed": "113345",
+          "file": "path_PRMstar_env1_run1_seed113345.csv"
+        },
+        "RRTConnect": {
+          "seed": "113345",
+          "file": "path_RRTConnect_env1_run1_seed113345.csv"
+        },
+        "RRTstar": {
+          "seed": "113345",
+          "file": "path_RRTstar_env1_run1_seed113345.csv"
+        }
+      },
+      "2": {
+        "BITstar": {
+          "seed": "114345",
+          "file": "path_BITstar_env1_run2_seed114345.csv"
+        },
+        "PRMstar": {
+          "seed": "114345",
+          "file": "path_PRMstar_env1_run2_seed114345.csv"
+        },
+        "RRTConnect": {
+          "seed": "114345",
+          "file": "path_RRTConnect_env1_run2_seed114345.csv"
+        },
+        "RRTstar": {
+          "seed": "114345",
+          "file": "path_RRTstar_env1_run2_seed114345.csv"
+        }
+      },
+      "3": {
+        "BITstar": {
+          "seed": "115345",
+          "file": "path_BITstar_env1_run3_seed115345.csv"
+        },
+        "PRMstar": {
+          "seed": "115345",
+          "file": "path_PRMstar_env1_run3_seed115345.csv"
+        },
+        "RRTConnect": {
+          "seed": "115345",
+          "file": "path_RRTConnect_env1_run3_seed115345.csv"
+        },
+        "RRTstar": {
+          "seed": "115345",
+          "file": "path_RRTstar_env1_run3_seed115345.csv"
+        }
+      },
+      "4": {
+        "BITstar": {
+          "seed": "116345",
+          "file": "path_BITstar_env1_run4_seed116345.csv"
+        },
+        "PRMstar": {
+          "seed": "116345",
+          "file": "path_PRMstar_env1_run4_seed116345.csv"
+        },
+        "RRTConnect": {
+          "seed": "116345",
+          "file": "path_RRTConnect_env1_run4_seed116345.csv"
+        },
+        "RRTstar": {
+          "seed": "116345",
+          "file": "path_RRTstar_env1_run4_seed116345.csv"
+        }
+      },
+      "5": {
+        "BITstar": {
+          "seed": "117345",
+          "file": "path_BITstar_env1_run5_seed117345.csv"
+        },
+        "PRMstar": {
+          "seed": "117345",
+          "file": "path_PRMstar_env1_run5_seed117345.csv"
+        },
+        "RRTConnect": {
+          "seed": "117345",
+          "file": "path_RRTConnect_env1_run5_seed117345.csv"
+        },
+        "RRTstar": {
+          "seed": "117345",
+          "file": "path_RRTstar_env1_run5_seed117345.csv"
+        }
+      },
+      "6": {
+        "BITstar": {
+          "seed": "118345",
+          "file": "path_BITstar_env1_run6_seed118345.csv"
+        },
+        "PRMstar": {
+          "seed": "118345",
+          "file": "path_PRMstar_env1_run6_seed118345.csv"
+        },
+        "RRTConnect": {
+          "seed": "118345",
+          "file": "path_RRTConnect_env1_run6_seed118345.csv"
+        },
+        "RRTstar": {
+          "seed": "118345",
+          "file": "path_RRTstar_env1_run6_seed118345.csv"
+        }
+      },
+      "7": {
+        "BITstar": {
+          "seed": "119345",
+          "file": "path_BITstar_env1_run7_seed119345.csv"
+        },
+        "PRMstar": {
+          "seed": "119345",
+          "file": "path_PRMstar_env1_run7_seed119345.csv"
+        },
+        "RRTConnect": {
+          "seed": "119345",
+          "file": "path_RRTConnect_env1_run7_seed119345.csv"
+        },
+        "RRTstar": {
+          "seed": "119345",
+          "file": "path_RRTstar_env1_run7_seed119345.csv"
+        }
+      },
+      "8": {
+        "BITstar": {
+          "seed": "120345",
+          "file": "path_BITstar_env1_run8_seed120345.csv"
+        },
+        "PRMstar": {
+          "seed": "120345",
+          "file": "path_PRMstar_env1_run8_seed120345.csv"
+        },
+        "RRTConnect": {
+          "seed": "120345",
+          "file": "path_RRTConnect_env1_run8_seed120345.csv"
+        },
+        "RRTstar": {
+          "seed": "120345",
+          "file": "path_RRTstar_env1_run8_seed120345.csv"
+        }
+      },
+      "9": {
+        "BITstar": {
+          "seed": "121345",
+          "file": "path_BITstar_env1_run9_seed121345.csv"
+        },
+        "PRMstar": {
+          "seed": "121345",
+          "file": "path_PRMstar_env1_run9_seed121345.csv"
+        },
+        "RRTConnect": {
+          "seed": "121345",
+          "file": "path_RRTConnect_env1_run9_seed121345.csv"
+        },
+        "RRTstar": {
+          "seed": "121345",
+          "file": "path_RRTstar_env1_run9_seed121345.csv"
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "BITstar": {
+          "seed": "212345",
+          "file": "path_BITstar_env2_run0_seed212345.csv"
+        },
+        "PRMstar": {
+          "seed": "212345",
+          "file": "path_PRMstar_env2_run0_seed212345.csv"
+        },
+        "RRTConnect": {
+          "seed": "212345",
+          "file": "path_RRTConnect_env2_run0_seed212345.csv"
+        },
+        "RRTstar": {
+          "seed": "212345",
+          "file": "path_RRTstar_env2_run0_seed212345.csv"
+        }
+      },
+      "10": {
+        "BITstar": {
+          "seed": "222345",
+          "file": "path_BITstar_env2_run10_seed222345.csv"
+        },
+        "PRMstar": {
+          "seed": "222345",
+          "file": "path_PRMstar_env2_run10_seed222345.csv"
+        },
+        "RRTConnect": {
+          "seed": "222345",
+          "file": "path_RRTConnect_env2_run10_seed222345.csv"
+        },
+        "RRTstar": {
+          "seed": "222345",
+          "file": "path_RRTstar_env2_run10_seed222345.csv"
+        }
+      },
+      "11": {
+        "BITstar": {
+          "seed": "223345",
+          "file": "path_BITstar_env2_run11_seed223345.csv"
+        },
+        "PRMstar": {
+          "seed": "223345",
+          "file": "path_PRMstar_env2_run11_seed223345.csv"
+        },
+        "RRTConnect": {
+          "seed": "223345",
+          "file": "path_RRTConnect_env2_run11_seed223345.csv"
+        },
+        "RRTstar": {
+          "seed": "223345",
+          "file": "path_RRTstar_env2_run11_seed223345.csv"
+        }
+      },
+      "12": {
+        "BITstar": {
+          "seed": "224345",
+          "file": "path_BITstar_env2_run12_seed224345.csv"
+        },
+        "PRMstar": {
+          "seed": "224345",
+          "file": "path_PRMstar_env2_run12_seed224345.csv"
+        },
+        "RRTConnect": {
+          "seed": "224345",
+          "file": "path_RRTConnect_env2_run12_seed224345.csv"
+        },
+        "RRTstar": {
+          "seed": "224345",
+          "file": "path_RRTstar_env2_run12_seed224345.csv"
+        }
+      },
+      "13": {
+        "BITstar": {
+          "seed": "225345",
+          "file": "path_BITstar_env2_run13_seed225345.csv"
+        },
+        "PRMstar": {
+          "seed": "225345",
+          "file": "path_PRMstar_env2_run13_seed225345.csv"
+        },
+        "RRTConnect": {
+          "seed": "225345",
+          "file": "path_RRTConnect_env2_run13_seed225345.csv"
+        },
+        "RRTstar": {
+          "seed": "225345",
+          "file": "path_RRTstar_env2_run13_seed225345.csv"
+        }
+      },
+      "14": {
+        "BITstar": {
+          "seed": "226345",
+          "file": "path_BITstar_env2_run14_seed226345.csv"
+        },
+        "PRMstar": {
+          "seed": "226345",
+          "file": "path_PRMstar_env2_run14_seed226345.csv"
+        },
+        "RRTConnect": {
+          "seed": "226345",
+          "file": "path_RRTConnect_env2_run14_seed226345.csv"
+        },
+        "RRTstar": {
+          "seed": "226345",
+          "file": "path_RRTstar_env2_run14_seed226345.csv"
+        }
+      },
+      "15": {
+        "BITstar": {
+          "seed": "227345",
+          "file": "path_BITstar_env2_run15_seed227345.csv"
+        },
+        "PRMstar": {
+          "seed": "227345",
+          "file": "path_PRMstar_env2_run15_seed227345.csv"
+        },
+        "RRTConnect": {
+          "seed": "227345",
+          "file": "path_RRTConnect_env2_run15_seed227345.csv"
+        },
+        "RRTstar": {
+          "seed": "227345",
+          "file": "path_RRTstar_env2_run15_seed227345.csv"
+        }
+      },
+      "16": {
+        "BITstar": {
+          "seed": "228345",
+          "file": "path_BITstar_env2_run16_seed228345.csv"
+        },
+        "PRMstar": {
+          "seed": "228345",
+          "file": "path_PRMstar_env2_run16_seed228345.csv"
+        },
+        "RRTConnect": {
+          "seed": "228345",
+          "file": "path_RRTConnect_env2_run16_seed228345.csv"
+        },
+        "RRTstar": {
+          "seed": "228345",
+          "file": "path_RRTstar_env2_run16_seed228345.csv"
+        }
+      },
+      "17": {
+        "BITstar": {
+          "seed": "229345",
+          "file": "path_BITstar_env2_run17_seed229345.csv"
+        },
+        "PRMstar": {
+          "seed": "229345",
+          "file": "path_PRMstar_env2_run17_seed229345.csv"
+        },
+        "RRTConnect": {
+          "seed": "229345",
+          "file": "path_RRTConnect_env2_run17_seed229345.csv"
+        },
+        "RRTstar": {
+          "seed": "229345",
+          "file": "path_RRTstar_env2_run17_seed229345.csv"
+        }
+      },
+      "18": {
+        "BITstar": {
+          "seed": "230345",
+          "file": "path_BITstar_env2_run18_seed230345.csv"
+        },
+        "PRMstar": {
+          "seed": "230345",
+          "file": "path_PRMstar_env2_run18_seed230345.csv"
+        },
+        "RRTConnect": {
+          "seed": "230345",
+          "file": "path_RRTConnect_env2_run18_seed230345.csv"
+        },
+        "RRTstar": {
+          "seed": "230345",
+          "file": "path_RRTstar_env2_run18_seed230345.csv"
+        }
+      },
+      "19": {
+        "BITstar": {
+          "seed": "231345",
+          "file": "path_BITstar_env2_run19_seed231345.csv"
+        },
+        "PRMstar": {
+          "seed": "231345",
+          "file": "path_PRMstar_env2_run19_seed231345.csv"
+        },
+        "RRTConnect": {
+          "seed": "231345",
+          "file": "path_RRTConnect_env2_run19_seed231345.csv"
+        },
+        "RRTstar": {
+          "seed": "231345",
+          "file": "path_RRTstar_env2_run19_seed231345.csv"
+        }
+      },
+      "1": {
+        "BITstar": {
+          "seed": "213345",
+          "file": "path_BITstar_env2_run1_seed213345.csv"
+        },
+        "PRMstar": {
+          "seed": "213345",
+          "file": "path_PRMstar_env2_run1_seed213345.csv"
+        },
+        "RRTConnect": {
+          "seed": "213345",
+          "file": "path_RRTConnect_env2_run1_seed213345.csv"
+        },
+        "RRTstar": {
+          "seed": "213345",
+          "file": "path_RRTstar_env2_run1_seed213345.csv"
+        }
+      },
+      "2": {
+        "BITstar": {
+          "seed": "214345",
+          "file": "path_BITstar_env2_run2_seed214345.csv"
+        },
+        "PRMstar": {
+          "seed": "214345",
+          "file": "path_PRMstar_env2_run2_seed214345.csv"
+        },
+        "RRTConnect": {
+          "seed": "214345",
+          "file": "path_RRTConnect_env2_run2_seed214345.csv"
+        },
+        "RRTstar": {
+          "seed": "214345",
+          "file": "path_RRTstar_env2_run2_seed214345.csv"
+        }
+      },
+      "3": {
+        "BITstar": {
+          "seed": "215345",
+          "file": "path_BITstar_env2_run3_seed215345.csv"
+        },
+        "PRMstar": {
+          "seed": "215345",
+          "file": "path_PRMstar_env2_run3_seed215345.csv"
+        },
+        "RRTConnect": {
+          "seed": "215345",
+          "file": "path_RRTConnect_env2_run3_seed215345.csv"
+        },
+        "RRTstar": {
+          "seed": "215345",
+          "file": "path_RRTstar_env2_run3_seed215345.csv"
+        }
+      },
+      "4": {
+        "BITstar": {
+          "seed": "216345",
+          "file": "path_BITstar_env2_run4_seed216345.csv"
+        },
+        "PRMstar": {
+          "seed": "216345",
+          "file": "path_PRMstar_env2_run4_seed216345.csv"
+        },
+        "RRTConnect": {
+          "seed": "216345",
+          "file": "path_RRTConnect_env2_run4_seed216345.csv"
+        },
+        "RRTstar": {
+          "seed": "216345",
+          "file": "path_RRTstar_env2_run4_seed216345.csv"
+        }
+      },
+      "5": {
+        "BITstar": {
+          "seed": "217345",
+          "file": "path_BITstar_env2_run5_seed217345.csv"
+        },
+        "PRMstar": {
+          "seed": "217345",
+          "file": "path_PRMstar_env2_run5_seed217345.csv"
+        },
+        "RRTConnect": {
+          "seed": "217345",
+          "file": "path_RRTConnect_env2_run5_seed217345.csv"
+        },
+        "RRTstar": {
+          "seed": "217345",
+          "file": "path_RRTstar_env2_run5_seed217345.csv"
+        }
+      },
+      "6": {
+        "BITstar": {
+          "seed": "218345",
+          "file": "path_BITstar_env2_run6_seed218345.csv"
+        },
+        "PRMstar": {
+          "seed": "218345",
+          "file": "path_PRMstar_env2_run6_seed218345.csv"
+        },
+        "RRTConnect": {
+          "seed": "218345",
+          "file": "path_RRTConnect_env2_run6_seed218345.csv"
+        },
+        "RRTstar": {
+          "seed": "218345",
+          "file": "path_RRTstar_env2_run6_seed218345.csv"
+        }
+      },
+      "7": {
+        "BITstar": {
+          "seed": "219345",
+          "file": "path_BITstar_env2_run7_seed219345.csv"
+        },
+        "PRMstar": {
+          "seed": "219345",
+          "file": "path_PRMstar_env2_run7_seed219345.csv"
+        },
+        "RRTConnect": {
+          "seed": "219345",
+          "file": "path_RRTConnect_env2_run7_seed219345.csv"
+        },
+        "RRTstar": {
+          "seed": "219345",
+          "file": "path_RRTstar_env2_run7_seed219345.csv"
+        }
+      },
+      "8": {
+        "BITstar": {
+          "seed": "220345",
+          "file": "path_BITstar_env2_run8_seed220345.csv"
+        },
+        "PRMstar": {
+          "seed": "220345",
+          "file": "path_PRMstar_env2_run8_seed220345.csv"
+        },
+        "RRTConnect": {
+          "seed": "220345",
+          "file": "path_RRTConnect_env2_run8_seed220345.csv"
+        },
+        "RRTstar": {
+          "seed": "220345",
+          "file": "path_RRTstar_env2_run8_seed220345.csv"
+        }
+      },
+      "9": {
+        "BITstar": {
+          "seed": "221345",
+          "file": "path_BITstar_env2_run9_seed221345.csv"
+        },
+        "PRMstar": {
+          "seed": "221345",
+          "file": "path_PRMstar_env2_run9_seed221345.csv"
+        },
+        "RRTConnect": {
+          "seed": "221345",
+          "file": "path_RRTConnect_env2_run9_seed221345.csv"
+        },
+        "RRTstar": {
+          "seed": "221345",
+          "file": "path_RRTstar_env2_run9_seed221345.csv"
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "BITstar": {
+          "seed": "312345",
+          "file": "path_BITstar_env3_run0_seed312345.csv"
+        },
+        "PRMstar": {
+          "seed": "312345",
+          "file": "path_PRMstar_env3_run0_seed312345.csv"
+        },
+        "RRTConnect": {
+          "seed": "312345",
+          "file": "path_RRTConnect_env3_run0_seed312345.csv"
+        },
+        "RRTstar": {
+          "seed": "312345",
+          "file": "path_RRTstar_env3_run0_seed312345.csv"
+        }
+      },
+      "10": {
+        "BITstar": {
+          "seed": "322345",
+          "file": "path_BITstar_env3_run10_seed322345.csv"
+        },
+        "PRMstar": {
+          "seed": "322345",
+          "file": "path_PRMstar_env3_run10_seed322345.csv"
+        },
+        "RRTConnect": {
+          "seed": "322345",
+          "file": "path_RRTConnect_env3_run10_seed322345.csv"
+        },
+        "RRTstar": {
+          "seed": "322345",
+          "file": "path_RRTstar_env3_run10_seed322345.csv"
+        }
+      },
+      "11": {
+        "BITstar": {
+          "seed": "323345",
+          "file": "path_BITstar_env3_run11_seed323345.csv"
+        },
+        "PRMstar": {
+          "seed": "323345",
+          "file": "path_PRMstar_env3_run11_seed323345.csv"
+        },
+        "RRTConnect": {
+          "seed": "323345",
+          "file": "path_RRTConnect_env3_run11_seed323345.csv"
+        },
+        "RRTstar": {
+          "seed": "323345",
+          "file": "path_RRTstar_env3_run11_seed323345.csv"
+        }
+      },
+      "12": {
+        "BITstar": {
+          "seed": "324345",
+          "file": "path_BITstar_env3_run12_seed324345.csv"
+        },
+        "PRMstar": {
+          "seed": "324345",
+          "file": "path_PRMstar_env3_run12_seed324345.csv"
+        },
+        "RRTConnect": {
+          "seed": "324345",
+          "file": "path_RRTConnect_env3_run12_seed324345.csv"
+        },
+        "RRTstar": {
+          "seed": "324345",
+          "file": "path_RRTstar_env3_run12_seed324345.csv"
+        }
+      },
+      "13": {
+        "BITstar": {
+          "seed": "325345",
+          "file": "path_BITstar_env3_run13_seed325345.csv"
+        },
+        "PRMstar": {
+          "seed": "325345",
+          "file": "path_PRMstar_env3_run13_seed325345.csv"
+        },
+        "RRTConnect": {
+          "seed": "325345",
+          "file": "path_RRTConnect_env3_run13_seed325345.csv"
+        },
+        "RRTstar": {
+          "seed": "325345",
+          "file": "path_RRTstar_env3_run13_seed325345.csv"
+        }
+      },
+      "14": {
+        "BITstar": {
+          "seed": "326345",
+          "file": "path_BITstar_env3_run14_seed326345.csv"
+        },
+        "PRMstar": {
+          "seed": "326345",
+          "file": "path_PRMstar_env3_run14_seed326345.csv"
+        },
+        "RRTConnect": {
+          "seed": "326345",
+          "file": "path_RRTConnect_env3_run14_seed326345.csv"
+        },
+        "RRTstar": {
+          "seed": "326345",
+          "file": "path_RRTstar_env3_run14_seed326345.csv"
+        }
+      },
+      "15": {
+        "BITstar": {
+          "seed": "327345",
+          "file": "path_BITstar_env3_run15_seed327345.csv"
+        },
+        "PRMstar": {
+          "seed": "327345",
+          "file": "path_PRMstar_env3_run15_seed327345.csv"
+        },
+        "RRTConnect": {
+          "seed": "327345",
+          "file": "path_RRTConnect_env3_run15_seed327345.csv"
+        },
+        "RRTstar": {
+          "seed": "327345",
+          "file": "path_RRTstar_env3_run15_seed327345.csv"
+        }
+      },
+      "16": {
+        "BITstar": {
+          "seed": "328345",
+          "file": "path_BITstar_env3_run16_seed328345.csv"
+        },
+        "PRMstar": {
+          "seed": "328345",
+          "file": "path_PRMstar_env3_run16_seed328345.csv"
+        },
+        "RRTConnect": {
+          "seed": "328345",
+          "file": "path_RRTConnect_env3_run16_seed328345.csv"
+        },
+        "RRTstar": {
+          "seed": "328345",
+          "file": "path_RRTstar_env3_run16_seed328345.csv"
+        }
+      },
+      "17": {
+        "BITstar": {
+          "seed": "329345",
+          "file": "path_BITstar_env3_run17_seed329345.csv"
+        },
+        "PRMstar": {
+          "seed": "329345",
+          "file": "path_PRMstar_env3_run17_seed329345.csv"
+        },
+        "RRTConnect": {
+          "seed": "329345",
+          "file": "path_RRTConnect_env3_run17_seed329345.csv"
+        },
+        "RRTstar": {
+          "seed": "329345",
+          "file": "path_RRTstar_env3_run17_seed329345.csv"
+        }
+      },
+      "18": {
+        "BITstar": {
+          "seed": "330345",
+          "file": "path_BITstar_env3_run18_seed330345.csv"
+        },
+        "PRMstar": {
+          "seed": "330345",
+          "file": "path_PRMstar_env3_run18_seed330345.csv"
+        },
+        "RRTConnect": {
+          "seed": "330345",
+          "file": "path_RRTConnect_env3_run18_seed330345.csv"
+        },
+        "RRTstar": {
+          "seed": "330345",
+          "file": "path_RRTstar_env3_run18_seed330345.csv"
+        }
+      },
+      "19": {
+        "BITstar": {
+          "seed": "331345",
+          "file": "path_BITstar_env3_run19_seed331345.csv"
+        },
+        "PRMstar": {
+          "seed": "331345",
+          "file": "path_PRMstar_env3_run19_seed331345.csv"
+        },
+        "RRTConnect": {
+          "seed": "331345",
+          "file": "path_RRTConnect_env3_run19_seed331345.csv"
+        },
+        "RRTstar": {
+          "seed": "331345",
+          "file": "path_RRTstar_env3_run19_seed331345.csv"
+        }
+      },
+      "1": {
+        "BITstar": {
+          "seed": "313345",
+          "file": "path_BITstar_env3_run1_seed313345.csv"
+        },
+        "PRMstar": {
+          "seed": "313345",
+          "file": "path_PRMstar_env3_run1_seed313345.csv"
+        },
+        "RRTConnect": {
+          "seed": "313345",
+          "file": "path_RRTConnect_env3_run1_seed313345.csv"
+        },
+        "RRTstar": {
+          "seed": "313345",
+          "file": "path_RRTstar_env3_run1_seed313345.csv"
+        }
+      },
+      "2": {
+        "BITstar": {
+          "seed": "314345",
+          "file": "path_BITstar_env3_run2_seed314345.csv"
+        },
+        "PRMstar": {
+          "seed": "314345",
+          "file": "path_PRMstar_env3_run2_seed314345.csv"
+        },
+        "RRTConnect": {
+          "seed": "314345",
+          "file": "path_RRTConnect_env3_run2_seed314345.csv"
+        },
+        "RRTstar": {
+          "seed": "314345",
+          "file": "path_RRTstar_env3_run2_seed314345.csv"
+        }
+      },
+      "3": {
+        "BITstar": {
+          "seed": "315345",
+          "file": "path_BITstar_env3_run3_seed315345.csv"
+        },
+        "PRMstar": {
+          "seed": "315345",
+          "file": "path_PRMstar_env3_run3_seed315345.csv"
+        },
+        "RRTConnect": {
+          "seed": "315345",
+          "file": "path_RRTConnect_env3_run3_seed315345.csv"
+        },
+        "RRTstar": {
+          "seed": "315345",
+          "file": "path_RRTstar_env3_run3_seed315345.csv"
+        }
+      },
+      "4": {
+        "BITstar": {
+          "seed": "316345",
+          "file": "path_BITstar_env3_run4_seed316345.csv"
+        },
+        "PRMstar": {
+          "seed": "316345",
+          "file": "path_PRMstar_env3_run4_seed316345.csv"
+        },
+        "RRTConnect": {
+          "seed": "316345",
+          "file": "path_RRTConnect_env3_run4_seed316345.csv"
+        },
+        "RRTstar": {
+          "seed": "316345",
+          "file": "path_RRTstar_env3_run4_seed316345.csv"
+        }
+      },
+      "5": {
+        "BITstar": {
+          "seed": "317345",
+          "file": "path_BITstar_env3_run5_seed317345.csv"
+        },
+        "PRMstar": {
+          "seed": "317345",
+          "file": "path_PRMstar_env3_run5_seed317345.csv"
+        },
+        "RRTConnect": {
+          "seed": "317345",
+          "file": "path_RRTConnect_env3_run5_seed317345.csv"
+        },
+        "RRTstar": {
+          "seed": "317345",
+          "file": "path_RRTstar_env3_run5_seed317345.csv"
+        }
+      },
+      "6": {
+        "BITstar": {
+          "seed": "318345",
+          "file": "path_BITstar_env3_run6_seed318345.csv"
+        },
+        "PRMstar": {
+          "seed": "318345",
+          "file": "path_PRMstar_env3_run6_seed318345.csv"
+        },
+        "RRTConnect": {
+          "seed": "318345",
+          "file": "path_RRTConnect_env3_run6_seed318345.csv"
+        },
+        "RRTstar": {
+          "seed": "318345",
+          "file": "path_RRTstar_env3_run6_seed318345.csv"
+        }
+      },
+      "7": {
+        "BITstar": {
+          "seed": "319345",
+          "file": "path_BITstar_env3_run7_seed319345.csv"
+        },
+        "PRMstar": {
+          "seed": "319345",
+          "file": "path_PRMstar_env3_run7_seed319345.csv"
+        },
+        "RRTConnect": {
+          "seed": "319345",
+          "file": "path_RRTConnect_env3_run7_seed319345.csv"
+        },
+        "RRTstar": {
+          "seed": "319345",
+          "file": "path_RRTstar_env3_run7_seed319345.csv"
+        }
+      },
+      "8": {
+        "BITstar": {
+          "seed": "320345",
+          "file": "path_BITstar_env3_run8_seed320345.csv"
+        },
+        "PRMstar": {
+          "seed": "320345",
+          "file": "path_PRMstar_env3_run8_seed320345.csv"
+        },
+        "RRTConnect": {
+          "seed": "320345",
+          "file": "path_RRTConnect_env3_run8_seed320345.csv"
+        },
+        "RRTstar": {
+          "seed": "320345",
+          "file": "path_RRTstar_env3_run8_seed320345.csv"
+        }
+      },
+      "9": {
+        "BITstar": {
+          "seed": "321345",
+          "file": "path_BITstar_env3_run9_seed321345.csv"
+        },
+        "PRMstar": {
+          "seed": "321345",
+          "file": "path_PRMstar_env3_run9_seed321345.csv"
+        },
+        "RRTConnect": {
+          "seed": "321345",
+          "file": "path_RRTConnect_env3_run9_seed321345.csv"
+        },
+        "RRTstar": {
+          "seed": "321345",
+          "file": "path_RRTstar_env3_run9_seed321345.csv"
+        }
+      }
+    },
+    "4": {
+      "0": {
+        "BITstar": {
+          "seed": "412345",
+          "file": "path_BITstar_env4_run0_seed412345.csv"
+        },
+        "PRMstar": {
+          "seed": "412345",
+          "file": "path_PRMstar_env4_run0_seed412345.csv"
+        },
+        "RRTConnect": {
+          "seed": "412345",
+          "file": "path_RRTConnect_env4_run0_seed412345.csv"
+        },
+        "RRTstar": {
+          "seed": "412345",
+          "file": "path_RRTstar_env4_run0_seed412345.csv"
+        }
+      },
+      "10": {
+        "BITstar": {
+          "seed": "422345",
+          "file": "path_BITstar_env4_run10_seed422345.csv"
+        },
+        "PRMstar": {
+          "seed": "422345",
+          "file": "path_PRMstar_env4_run10_seed422345.csv"
+        },
+        "RRTConnect": {
+          "seed": "422345",
+          "file": "path_RRTConnect_env4_run10_seed422345.csv"
+        },
+        "RRTstar": {
+          "seed": "422345",
+          "file": "path_RRTstar_env4_run10_seed422345.csv"
+        }
+      },
+      "11": {
+        "BITstar": {
+          "seed": "423345",
+          "file": "path_BITstar_env4_run11_seed423345.csv"
+        },
+        "PRMstar": {
+          "seed": "423345",
+          "file": "path_PRMstar_env4_run11_seed423345.csv"
+        },
+        "RRTConnect": {
+          "seed": "423345",
+          "file": "path_RRTConnect_env4_run11_seed423345.csv"
+        },
+        "RRTstar": {
+          "seed": "423345",
+          "file": "path_RRTstar_env4_run11_seed423345.csv"
+        }
+      },
+      "12": {
+        "BITstar": {
+          "seed": "424345",
+          "file": "path_BITstar_env4_run12_seed424345.csv"
+        },
+        "PRMstar": {
+          "seed": "424345",
+          "file": "path_PRMstar_env4_run12_seed424345.csv"
+        },
+        "RRTConnect": {
+          "seed": "424345",
+          "file": "path_RRTConnect_env4_run12_seed424345.csv"
+        },
+        "RRTstar": {
+          "seed": "424345",
+          "file": "path_RRTstar_env4_run12_seed424345.csv"
+        }
+      },
+      "13": {
+        "BITstar": {
+          "seed": "425345",
+          "file": "path_BITstar_env4_run13_seed425345.csv"
+        },
+        "PRMstar": {
+          "seed": "425345",
+          "file": "path_PRMstar_env4_run13_seed425345.csv"
+        },
+        "RRTConnect": {
+          "seed": "425345",
+          "file": "path_RRTConnect_env4_run13_seed425345.csv"
+        },
+        "RRTstar": {
+          "seed": "425345",
+          "file": "path_RRTstar_env4_run13_seed425345.csv"
+        }
+      },
+      "14": {
+        "BITstar": {
+          "seed": "426345",
+          "file": "path_BITstar_env4_run14_seed426345.csv"
+        },
+        "PRMstar": {
+          "seed": "426345",
+          "file": "path_PRMstar_env4_run14_seed426345.csv"
+        },
+        "RRTConnect": {
+          "seed": "426345",
+          "file": "path_RRTConnect_env4_run14_seed426345.csv"
+        },
+        "RRTstar": {
+          "seed": "426345",
+          "file": "path_RRTstar_env4_run14_seed426345.csv"
+        }
+      },
+      "15": {
+        "BITstar": {
+          "seed": "427345",
+          "file": "path_BITstar_env4_run15_seed427345.csv"
+        },
+        "PRMstar": {
+          "seed": "427345",
+          "file": "path_PRMstar_env4_run15_seed427345.csv"
+        },
+        "RRTConnect": {
+          "seed": "427345",
+          "file": "path_RRTConnect_env4_run15_seed427345.csv"
+        },
+        "RRTstar": {
+          "seed": "427345",
+          "file": "path_RRTstar_env4_run15_seed427345.csv"
+        }
+      },
+      "16": {
+        "BITstar": {
+          "seed": "428345",
+          "file": "path_BITstar_env4_run16_seed428345.csv"
+        },
+        "PRMstar": {
+          "seed": "428345",
+          "file": "path_PRMstar_env4_run16_seed428345.csv"
+        },
+        "RRTConnect": {
+          "seed": "428345",
+          "file": "path_RRTConnect_env4_run16_seed428345.csv"
+        },
+        "RRTstar": {
+          "seed": "428345",
+          "file": "path_RRTstar_env4_run16_seed428345.csv"
+        }
+      },
+      "17": {
+        "BITstar": {
+          "seed": "429345",
+          "file": "path_BITstar_env4_run17_seed429345.csv"
+        },
+        "PRMstar": {
+          "seed": "429345",
+          "file": "path_PRMstar_env4_run17_seed429345.csv"
+        },
+        "RRTConnect": {
+          "seed": "429345",
+          "file": "path_RRTConnect_env4_run17_seed429345.csv"
+        },
+        "RRTstar": {
+          "seed": "429345",
+          "file": "path_RRTstar_env4_run17_seed429345.csv"
+        }
+      },
+      "18": {
+        "BITstar": {
+          "seed": "430345",
+          "file": "path_BITstar_env4_run18_seed430345.csv"
+        },
+        "PRMstar": {
+          "seed": "430345",
+          "file": "path_PRMstar_env4_run18_seed430345.csv"
+        },
+        "RRTConnect": {
+          "seed": "430345",
+          "file": "path_RRTConnect_env4_run18_seed430345.csv"
+        },
+        "RRTstar": {
+          "seed": "430345",
+          "file": "path_RRTstar_env4_run18_seed430345.csv"
+        }
+      },
+      "19": {
+        "BITstar": {
+          "seed": "431345",
+          "file": "path_BITstar_env4_run19_seed431345.csv"
+        },
+        "PRMstar": {
+          "seed": "431345",
+          "file": "path_PRMstar_env4_run19_seed431345.csv"
+        },
+        "RRTConnect": {
+          "seed": "431345",
+          "file": "path_RRTConnect_env4_run19_seed431345.csv"
+        },
+        "RRTstar": {
+          "seed": "431345",
+          "file": "path_RRTstar_env4_run19_seed431345.csv"
+        }
+      },
+      "1": {
+        "BITstar": {
+          "seed": "413345",
+          "file": "path_BITstar_env4_run1_seed413345.csv"
+        },
+        "PRMstar": {
+          "seed": "413345",
+          "file": "path_PRMstar_env4_run1_seed413345.csv"
+        },
+        "RRTConnect": {
+          "seed": "413345",
+          "file": "path_RRTConnect_env4_run1_seed413345.csv"
+        },
+        "RRTstar": {
+          "seed": "413345",
+          "file": "path_RRTstar_env4_run1_seed413345.csv"
+        }
+      },
+      "2": {
+        "BITstar": {
+          "seed": "414345",
+          "file": "path_BITstar_env4_run2_seed414345.csv"
+        },
+        "PRMstar": {
+          "seed": "414345",
+          "file": "path_PRMstar_env4_run2_seed414345.csv"
+        },
+        "RRTConnect": {
+          "seed": "414345",
+          "file": "path_RRTConnect_env4_run2_seed414345.csv"
+        },
+        "RRTstar": {
+          "seed": "414345",
+          "file": "path_RRTstar_env4_run2_seed414345.csv"
+        }
+      },
+      "3": {
+        "BITstar": {
+          "seed": "415345",
+          "file": "path_BITstar_env4_run3_seed415345.csv"
+        },
+        "PRMstar": {
+          "seed": "415345",
+          "file": "path_PRMstar_env4_run3_seed415345.csv"
+        },
+        "RRTConnect": {
+          "seed": "415345",
+          "file": "path_RRTConnect_env4_run3_seed415345.csv"
+        },
+        "RRTstar": {
+          "seed": "415345",
+          "file": "path_RRTstar_env4_run3_seed415345.csv"
+        }
+      },
+      "4": {
+        "BITstar": {
+          "seed": "416345",
+          "file": "path_BITstar_env4_run4_seed416345.csv"
+        },
+        "PRMstar": {
+          "seed": "416345",
+          "file": "path_PRMstar_env4_run4_seed416345.csv"
+        },
+        "RRTConnect": {
+          "seed": "416345",
+          "file": "path_RRTConnect_env4_run4_seed416345.csv"
+        },
+        "RRTstar": {
+          "seed": "416345",
+          "file": "path_RRTstar_env4_run4_seed416345.csv"
+        }
+      },
+      "5": {
+        "BITstar": {
+          "seed": "417345",
+          "file": "path_BITstar_env4_run5_seed417345.csv"
+        },
+        "PRMstar": {
+          "seed": "417345",
+          "file": "path_PRMstar_env4_run5_seed417345.csv"
+        },
+        "RRTConnect": {
+          "seed": "417345",
+          "file": "path_RRTConnect_env4_run5_seed417345.csv"
+        },
+        "RRTstar": {
+          "seed": "417345",
+          "file": "path_RRTstar_env4_run5_seed417345.csv"
+        }
+      },
+      "6": {
+        "BITstar": {
+          "seed": "418345",
+          "file": "path_BITstar_env4_run6_seed418345.csv"
+        },
+        "PRMstar": {
+          "seed": "418345",
+          "file": "path_PRMstar_env4_run6_seed418345.csv"
+        },
+        "RRTConnect": {
+          "seed": "418345",
+          "file": "path_RRTConnect_env4_run6_seed418345.csv"
+        },
+        "RRTstar": {
+          "seed": "418345",
+          "file": "path_RRTstar_env4_run6_seed418345.csv"
+        }
+      },
+      "7": {
+        "BITstar": {
+          "seed": "419345",
+          "file": "path_BITstar_env4_run7_seed419345.csv"
+        },
+        "PRMstar": {
+          "seed": "419345",
+          "file": "path_PRMstar_env4_run7_seed419345.csv"
+        },
+        "RRTConnect": {
+          "seed": "419345",
+          "file": "path_RRTConnect_env4_run7_seed419345.csv"
+        },
+        "RRTstar": {
+          "seed": "419345",
+          "file": "path_RRTstar_env4_run7_seed419345.csv"
+        }
+      },
+      "8": {
+        "BITstar": {
+          "seed": "420345",
+          "file": "path_BITstar_env4_run8_seed420345.csv"
+        },
+        "PRMstar": {
+          "seed": "420345",
+          "file": "path_PRMstar_env4_run8_seed420345.csv"
+        },
+        "RRTConnect": {
+          "seed": "420345",
+          "file": "path_RRTConnect_env4_run8_seed420345.csv"
+        },
+        "RRTstar": {
+          "seed": "420345",
+          "file": "path_RRTstar_env4_run8_seed420345.csv"
+        }
+      },
+      "9": {
+        "BITstar": {
+          "seed": "421345",
+          "file": "path_BITstar_env4_run9_seed421345.csv"
+        },
+        "PRMstar": {
+          "seed": "421345",
+          "file": "path_PRMstar_env4_run9_seed421345.csv"
+        },
+        "RRTConnect": {
+          "seed": "421345",
+          "file": "path_RRTConnect_env4_run9_seed421345.csv"
+        },
+        "RRTstar": {
+          "seed": "421345",
+          "file": "path_RRTstar_env4_run9_seed421345.csv"
+        }
+      }
+    }
+  },
+  "summary_csv": "tour_summary.csv"
+}

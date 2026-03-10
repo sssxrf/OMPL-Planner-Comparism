@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OMPL 4-Room Trajectory Viewer</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --panel: #ffffff;
+      --ink: #1d2128;
+      --muted: #5d6675;
+      --line: #d8dde6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+    .wrap {
+      max-width: 1320px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 20px;
+      font-weight: 650;
+    }
+    .sub {
+      margin: 0 0 14px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 220px));
+      gap: 10px 14px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .control {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    select, button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    button {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .planner-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin: 8px 0 6px 0;
+    }
+    .planner-boxes label {
+      font-size: 13px;
+      color: var(--ink);
+      text-transform: none;
+      letter-spacing: normal;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #plot {
+      width: 100%;
+      height: 75vh;
+      min-height: 520px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      min-height: 20px;
+    }
+    @media (max-width: 900px) {
+      .controls {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+      }
+      #plot {
+        min-height: 460px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <h1>OMPL 4-Room Interactive 3D Trajectories</h1>
+      <p class="sub">Rotate by dragging. Zoom with scroll wheel. Pan with right-drag (or trackpad equivalent).</p>
+
+      <div class="controls">
+        <div class="control">
+          <label for="envSelect">Environment</label>
+          <select id="envSelect"></select>
+        </div>
+        <div class="control">
+          <label for="runSelect">Run</label>
+          <select id="runSelect"></select>
+        </div>
+        <div class="control">
+          <label for="manifestPath">Dataset</label>
+          <select id="manifestPath"></select>
+        </div>
+        <div class="control">
+          <label>&nbsp;</label>
+          <button id="reloadBtn">Reload Data</button>
+        </div>
+      </div>
+
+      <div>
+        <label>Planners</label>
+        <div class="planner-boxes" id="plannerBoxes"></div>
+      </div>
+
+      <div id="plot"></div>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const envSelect = document.getElementById("envSelect");
+    const runSelect = document.getElementById("runSelect");
+    const plannerBoxes = document.getElementById("plannerBoxes");
+    const reloadBtn = document.getElementById("reloadBtn");
+    const manifestPathSelect = document.getElementById("manifestPath");
+
+    const BOX_COLOR = "#595f69";
+    const DEFAULT_MANIFESTS = [
+      { label: "latest", value: "data/latest/manifest.json" }
+    ];
+
+    let manifest = null;
+    let selectedPlanners = new Set();
+    const csvCache = new Map();
+
+    function setStatus(msg) {
+      statusEl.textContent = msg;
+    }
+
+    function makeAbsoluteDataPath(relativePath) {
+      const manifestUrl = manifestPathSelect.value;
+      const base = manifestUrl.substring(0, manifestUrl.lastIndexOf("/") + 1);
+      return `${base}${relativePath}`;
+    }
+
+    async function fetchText(path) {
+      if (csvCache.has(path)) return csvCache.get(path);
+      const res = await fetch(path);
+      if (!res.ok) {
+        throw new Error(`Failed to fetch ${path} (${res.status})`);
+      }
+      const txt = await res.text();
+      csvCache.set(path, txt);
+      return txt;
+    }
+
+    function parseCsvSimple(text) {
+      const lines = text.trim().split(/\r?\n/);
+      if (lines.length < 2) return [];
+      const header = lines[0].split(",");
+      const rows = [];
+      for (let i = 1; i < lines.length; i++) {
+        if (!lines[i]) continue;
+        const vals = lines[i].split(",");
+        const row = {};
+        for (let j = 0; j < header.length; j++) row[header[j]] = vals[j];
+        rows.push(row);
+      }
+      return rows;
+    }
+
+    function boxWireframeTrace(boxRows) {
+      const xs = [];
+      const ys = [];
+      const zs = [];
+      const edges = [
+        [0, 1], [1, 2], [2, 3], [3, 0],
+        [4, 5], [5, 6], [6, 7], [7, 4],
+        [0, 4], [1, 5], [2, 6], [3, 7]
+      ];
+
+      for (const b of boxRows) {
+        const xmin = Number(b.xmin), xmax = Number(b.xmax);
+        const ymin = Number(b.ymin), ymax = Number(b.ymax);
+        const zmin = Number(b.zmin), zmax = Number(b.zmax);
+        const c = [
+          [xmin, ymin, zmin], [xmax, ymin, zmin], [xmax, ymax, zmin], [xmin, ymax, zmin],
+          [xmin, ymin, zmax], [xmax, ymin, zmax], [xmax, ymax, zmax], [xmin, ymax, zmax]
+        ];
+        for (const [i, j] of edges) {
+          xs.push(c[i][0], c[j][0], null);
+          ys.push(c[i][1], c[j][1], null);
+          zs.push(c[i][2], c[j][2], null);
+        }
+      }
+
+      return {
+        type: "scatter3d",
+        mode: "lines",
+        x: xs,
+        y: ys,
+        z: zs,
+        line: { width: 2, color: BOX_COLOR },
+        name: "Obstacles",
+        hoverinfo: "skip"
+      };
+    }
+
+    async function drawPlot() {
+      if (!manifest) return;
+
+      const env = envSelect.value;
+      const run = runSelect.value;
+      const runMap = (manifest.paths?.[env]?.[run]) || {};
+      const traces = [];
+      const seedInfo = [];
+
+      try {
+        const boxFile = manifest.boxes?.[env];
+        if (boxFile) {
+          const boxCsv = await fetchText(makeAbsoluteDataPath(boxFile));
+          const boxRows = parseCsvSimple(boxCsv);
+          traces.push(boxWireframeTrace(boxRows));
+        }
+
+        for (const planner of manifest.planners) {
+          if (!selectedPlanners.has(planner)) continue;
+          if (!runMap[planner]) continue;
+
+          const p = runMap[planner];
+          const pathCsv = await fetchText(makeAbsoluteDataPath(p.file));
+          const rows = parseCsvSimple(pathCsv);
+          const x = rows.map(r => Number(r.x));
+          const y = rows.map(r => Number(r.y));
+          const z = rows.map(r => Number(r.z));
+          traces.push({
+            type: "scatter3d",
+            mode: "lines",
+            name: planner,
+            x, y, z,
+            line: { width: 5 }
+          });
+          seedInfo.push(`${planner}:seed${p.seed}`);
+        }
+
+        const titleSuffix = seedInfo.length ? seedInfo.join(", ") : "no selected planner path";
+        const layout = {
+          margin: { l: 0, r: 0, t: 56, b: 0 },
+          title: `env ${env}, run ${run}<br><sup>${titleSuffix}</sup>`,
+          legend: { orientation: "h", y: 1.02, x: 0 },
+          scene: {
+            xaxis: { title: "x", range: [-5, 5] },
+            yaxis: { title: "y", range: [-5, 5] },
+            zaxis: { title: "z", range: [-1.5, 1.5] },
+            aspectmode: "manual",
+            aspectratio: { x: 1, y: 1, z: 0.3 }
+          }
+        };
+
+        await Plotly.newPlot("plot", traces, layout, { responsive: true, displaylogo: false });
+        setStatus(`Loaded env ${env}, run ${run}.`);
+      } catch (err) {
+        console.error(err);
+        setStatus(String(err));
+      }
+    }
+
+    function refreshRunOptions() {
+      const env = envSelect.value;
+      const runs = manifest.runs?.[env] || [];
+      runSelect.innerHTML = "";
+      for (const r of runs) {
+        const opt = document.createElement("option");
+        opt.value = String(r);
+        opt.textContent = `run ${r}`;
+        runSelect.appendChild(opt);
+      }
+      if (runs.length > 0) runSelect.value = String(runs[0]);
+    }
+
+    function buildPlannerCheckboxes() {
+      plannerBoxes.innerHTML = "";
+      selectedPlanners = new Set(manifest.planners);
+      for (const p of manifest.planners) {
+        const label = document.createElement("label");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = true;
+        checkbox.addEventListener("change", () => {
+          if (checkbox.checked) selectedPlanners.add(p);
+          else selectedPlanners.delete(p);
+          drawPlot();
+        });
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(p));
+        plannerBoxes.appendChild(label);
+      }
+    }
+
+    async function loadManifest() {
+      setStatus("Loading manifest...");
+      try {
+        csvCache.clear();
+        const manifestUrl = manifestPathSelect.value;
+        const res = await fetch(manifestUrl);
+        if (!res.ok) throw new Error(`Failed to fetch ${manifestUrl} (${res.status})`);
+        manifest = await res.json();
+
+        envSelect.innerHTML = "";
+        for (const env of manifest.envs) {
+          const opt = document.createElement("option");
+          opt.value = String(env);
+          opt.textContent = `env ${env}`;
+          envSelect.appendChild(opt);
+        }
+        if (manifest.envs.length > 0) envSelect.value = String(manifest.envs[0]);
+
+        refreshRunOptions();
+        buildPlannerCheckboxes();
+        await drawPlot();
+      } catch (err) {
+        console.error(err);
+        setStatus(String(err));
+      }
+    }
+
+    function initManifestSelector() {
+      for (const m of DEFAULT_MANIFESTS) {
+        const opt = document.createElement("option");
+        opt.value = m.value;
+        opt.textContent = m.label;
+        manifestPathSelect.appendChild(opt);
+      }
+    }
+
+    envSelect.addEventListener("change", () => {
+      refreshRunOptions();
+      drawPlot();
+    });
+    runSelect.addEventListener("change", drawPlot);
+    manifestPathSelect.addEventListener("change", loadManifest);
+    reloadBtn.addEventListener("click", loadManifest);
+
+    initManifestSelector();
+    loadManifest();
+  </script>
+</body>
+</html>
