@@ -103,6 +103,54 @@
       color: var(--muted);
       min-height: 20px;
     }
+    .metrics {
+      margin-top: 16px;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+    .metrics h2 {
+      margin: 0 0 8px 0;
+      font-size: 17px;
+    }
+    .metrics h3 {
+      margin: 12px 0 6px 0;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 860px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: right;
+      white-space: nowrap;
+    }
+    th:first-child, td:first-child {
+      text-align: left;
+    }
+    thead th {
+      background: #f9fafb;
+      font-weight: 650;
+    }
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+    .metric-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
     @media (max-width: 900px) {
       .controls {
         grid-template-columns: repeat(2, minmax(140px, 1fr));
@@ -145,6 +193,18 @@
 
       <div id="plot"></div>
       <div class="status" id="status"></div>
+
+      <div class="metrics">
+        <h2>Metrics Summary</h2>
+        <div class="table-wrap">
+          <table id="overallTable"></table>
+        </div>
+        <h3 id="envTableTitle">Current Environment</h3>
+        <div class="table-wrap">
+          <table id="envTable"></table>
+        </div>
+        <div class="metric-note">Rows are filtered by selected planners. Mean metrics are computed on solved runs.</div>
+      </div>
     </div>
   </div>
 
@@ -155,6 +215,9 @@
     const plannerBoxes = document.getElementById("plannerBoxes");
     const reloadBtn = document.getElementById("reloadBtn");
     const manifestPathSelect = document.getElementById("manifestPath");
+    const overallTable = document.getElementById("overallTable");
+    const envTable = document.getElementById("envTable");
+    const envTableTitle = document.getElementById("envTableTitle");
 
     const BOX_COLOR = "#595f69";
     const DEFAULT_MANIFESTS = [
@@ -164,6 +227,7 @@
     let manifest = null;
     let selectedPlanners = new Set();
     const csvCache = new Map();
+    let summaryRows = [];
 
     function setStatus(msg) {
       statusEl.textContent = msg;
@@ -199,6 +263,139 @@
         rows.push(row);
       }
       return rows;
+    }
+
+    function toFiniteNumber(v) {
+      const n = Number(v);
+      return Number.isFinite(n) ? n : NaN;
+    }
+
+    function mean(arr) {
+      if (!arr.length) return NaN;
+      return arr.reduce((a, b) => a + b, 0) / arr.length;
+    }
+
+    function fmt(n, digits = 4) {
+      return Number.isFinite(n) ? n.toFixed(digits) : "-";
+    }
+
+    function normalizeSummaryRow(row) {
+      const success = Number(row.success) === 1;
+      const totalTime = toFiniteNumber(row.total_time_s);
+      const solveTime = row.solve_time_s !== undefined ? toFiniteNumber(row.solve_time_s) : totalTime;
+      const simplifyTime = row.simplify_time_s !== undefined ? toFiniteNumber(row.simplify_time_s) : 0.0;
+
+      let lenSE3 = NaN;
+      if (row.total_length_se3 !== undefined) lenSE3 = toFiniteNumber(row.total_length_se3);
+      else if (row.total_length !== undefined) lenSE3 = toFiniteNumber(row.total_length);
+
+      let lenXYZ = NaN;
+      if (row.total_length_xyz !== undefined) lenXYZ = toFiniteNumber(row.total_length_xyz);
+
+      return {
+        planner: row.planner,
+        env_seed: String(row.env_seed),
+        run: String(row.run),
+        success,
+        totalTime,
+        solveTime,
+        simplifyTime,
+        lenSE3,
+        lenXYZ
+      };
+    }
+
+    function computePlannerStats(rows) {
+      const stats = [];
+      for (const planner of manifest.planners) {
+        if (!selectedPlanners.has(planner)) continue;
+        const pRows = rows.filter(r => r.planner === planner);
+        if (!pRows.length) continue;
+
+        const solved = pRows.filter(r => r.success);
+        const solvedN = solved.length;
+        const totalN = pRows.length;
+        const successRate = totalN ? solvedN / totalN : 0;
+
+        const t = solved.map(r => r.totalTime).filter(Number.isFinite);
+        const ts = solved.map(r => r.solveTime).filter(Number.isFinite);
+        const tsp = solved.map(r => r.simplifyTime).filter(Number.isFinite);
+        const l3 = solved.map(r => r.lenSE3).filter(Number.isFinite);
+        const lx = solved.map(r => r.lenXYZ).filter(Number.isFinite);
+
+        stats.push({
+          planner,
+          solvedN,
+          totalN,
+          successRate,
+          meanTotalTime: mean(t),
+          meanSolveTime: mean(ts),
+          meanSimplifyTime: mean(tsp),
+          meanLenSE3: mean(l3),
+          meanLenXYZ: mean(lx)
+        });
+      }
+      return stats;
+    }
+
+    function renderMetricsTable(tableEl, stats) {
+      if (!stats.length) {
+        tableEl.innerHTML = "<tbody><tr><td>No matching rows</td></tr></tbody>";
+        return;
+      }
+
+      const hasXYZ = stats.some(s => Number.isFinite(s.meanLenXYZ));
+      let html = "";
+      html += "<thead><tr>";
+      html += "<th>Planner</th>";
+      html += "<th>Solved</th>";
+      html += "<th>Success %</th>";
+      html += "<th>Mean Total Time (s)</th>";
+      html += "<th>Mean Solve Time (s)</th>";
+      html += "<th>Mean Simplify Time (s)</th>";
+      html += "<th>Mean Length SE(3)</th>";
+      if (hasXYZ) html += "<th>Mean Length XYZ</th>";
+      html += "</tr></thead><tbody>";
+
+      for (const s of stats) {
+        html += "<tr>";
+        html += `<td>${s.planner}</td>`;
+        html += `<td>${s.solvedN}/${s.totalN}</td>`;
+        html += `<td>${fmt(100 * s.successRate, 1)}</td>`;
+        html += `<td>${fmt(s.meanTotalTime, 6)}</td>`;
+        html += `<td>${fmt(s.meanSolveTime, 6)}</td>`;
+        html += `<td>${fmt(s.meanSimplifyTime, 6)}</td>`;
+        html += `<td>${fmt(s.meanLenSE3, 6)}</td>`;
+        if (hasXYZ) html += `<td>${fmt(s.meanLenXYZ, 6)}</td>`;
+        html += "</tr>";
+      }
+      html += "</tbody>";
+      tableEl.innerHTML = html;
+    }
+
+    function updateMetricsTables() {
+      if (!manifest || !summaryRows.length) {
+        overallTable.innerHTML = "<tbody><tr><td>Summary CSV not available for this dataset.</td></tr></tbody>";
+        envTable.innerHTML = "<tbody><tr><td>Summary CSV not available for this dataset.</td></tr></tbody>";
+        return;
+      }
+
+      const env = envSelect.value;
+      envTableTitle.textContent = `Current Environment (env ${env})`;
+
+      const overallStats = computePlannerStats(summaryRows);
+      const envStats = computePlannerStats(summaryRows.filter(r => r.env_seed === env));
+
+      renderMetricsTable(overallTable, overallStats);
+      renderMetricsTable(envTable, envStats);
+    }
+
+    async function loadSummaryRows() {
+      summaryRows = [];
+      if (!manifest || !manifest.summary_csv) return;
+      const csvText = await fetchText(makeAbsoluteDataPath(manifest.summary_csv));
+      const rawRows = parseCsvSimple(csvText);
+      summaryRows = rawRows.map(normalizeSummaryRow);
     }
 
     function boxWireframeTrace(boxRows) {
@@ -291,6 +488,7 @@
 
         await Plotly.newPlot("plot", traces, layout, { responsive: true, displaylogo: false });
         setStatus(`Loaded env ${env}, run ${run}.`);
+        updateMetricsTables();
       } catch (err) {
         console.error(err);
         setStatus(String(err));
@@ -322,6 +520,7 @@
           if (checkbox.checked) selectedPlanners.add(p);
           else selectedPlanners.delete(p);
           drawPlot();
+          updateMetricsTables();
         });
         label.appendChild(checkbox);
         label.appendChild(document.createTextNode(p));
@@ -347,9 +546,11 @@
         }
         if (manifest.envs.length > 0) envSelect.value = String(manifest.envs[0]);
 
+        await loadSummaryRows();
         refreshRunOptions();
         buildPlannerCheckboxes();
         await drawPlot();
+        updateMetricsTables();
       } catch (err) {
         console.error(err);
         setStatus(String(err));
